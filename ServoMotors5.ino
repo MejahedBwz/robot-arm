@@ -1,10 +1,5 @@
 /*
- Controlling a servo position using a potentiometer (variable resistor)
- by Michal Rinott <http://people.interaction-ivrea.it/m.rinott>
-
- modified on 8 Nov 2013
- by Scott Fitzgerald
- http://www.arduino.cc/en/Tutorial/Knob
+ Controlling a servo position using a potentiometer 
 */
 
 #include <Servo.h>
@@ -40,7 +35,7 @@ void setup() {
 void loop() { 
   
   val = analogRead(potPin1);            // reads the value of the potentiometer (value between 0 and 1023)
-  val = map(val, 0, 1023, 0, 90);     // scale it for use with the servo (value between 0 and 180)
+  val = map(val, 0, 1023, 0, 90);     // scale it for use with the servo (value between 0 and 90)
   servo1.write(val);                  // sets the servo position according to the scaled value
   delay(1);                           // waits for the servo to get there
 
